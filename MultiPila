@@ -1,0 +1,44 @@
+private PilaPer v[] = new PilaPer[100];
+	private int n;
+	public MultiPilaPer() {
+		for (int i=1;i<100;i++) {
+			PilaPer p = new PilaPer();
+			v[i]=p;	
+		}
+		this.n = 0;
+	}
+	public int getN() {
+		return n;
+	}
+	public void setN(int n) {
+		this.n=n;
+	}
+	public boolean isEmpty(int i) {
+		return v[i].isEmpty();
+	}
+	public boolean isFull(int i) {
+		return v[i].isEmpty();
+	}
+	public int nroElem(int i) {
+		return v[i].nroElem();
+	}
+	public void add(Persona a, int i) {
+		v[i].add(a);
+	}
+	public Persona pop(int i) {
+		return v[i].pop();
+	}
+	public void mostrar() {
+		for (int i=1;i<=n;i++) {
+			v[i].mostrar();
+		}
+	}
+	public void mostrar(int i) {
+			v[i].mostrar();
+	}
+	public void vaciar(PilaPer z, int i) {
+		z.vaciar(v[i]);
+	}
+	public void vaciar(int i,int j) {
+		v[j].vaciar(v[i]);
+	}
