@@ -1,0 +1,71 @@
+private Nodo head;
+
+public ListaSimple() {
+
+this.head = null;
+
+}
+
+public Nodo getHead() {
+
+return head;
+
+}
+
+public void setHead(Nodo head) {
+
+this.head = head;
+
+}
+public void addLast('Parametros') {
+
+Nodo m = new Nodo();
+
+// Set Datos
+
+if (getHead()==null) {
+
+setHead(m);
+
+}
+
+else {
+
+Nodo w = getHead();
+
+while(w.getNext()!=null) {
+
+w = w.getNext();
+
+	}
+
+w.Next(m);
+
+	}
+
+}
+
+
+public void mostrar() {
+
+Nodo w = getHead();
+
+while(w!=null) {
+
+System.out.print( "[" + "gets" + " / " + "gets" + "]");
+
+System.out.print("---");
+
+if(w.getNext()==null) {
+
+System.out.print("null");
+
+}
+
+w = w.getNext();
+
+}
+
+System.out.println();
+
+}

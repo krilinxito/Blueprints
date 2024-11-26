@@ -1,0 +1,80 @@
+private 
+		int max = 50;
+		Dato v[] = new Dato[max+1];
+		int ini, fin; 
+	public CCircular() {
+			ini = fin = 0;
+		} 
+	public int nroElem(){
+		if (fin == 0 && ini == 0){
+			return 0;
+			}
+		if (fin>ini){
+			return fin-ini;
+			}
+		else{
+			return max-ini+fin;
+			}
+		}
+	public boolean isEmpty(){
+			if (nroElem() == 0){
+				return true;
+			}
+			return false;
+		}
+	public boolean isFull(){
+			if (nroElem() == max){
+				return true;
+			}
+			return false;
+		}
+	public void add(Dato elem){
+		if (!isFull())
+			{
+				if (fin == max){
+					fin = 1;
+				}
+				else {
+					fin = fin + 1;
+				}
+				v[fin] = elem;
+			}
+		else{
+		System.out.println("cola llena");
+			}
+		}
+	public Dato remove(){
+			Dato elem = new Dato();
+			if (!isEmpty()){
+				ini = ini + 1;
+				elem = v[ini];
+				if (ini==max){
+					ini=0;
+				}
+				if (ini==fin){
+					ini = 0;
+					fin = 0;
+				}
+			}
+			return elem;
+		}
+	public void mostrar(){
+		ColaCircular aux = new ColaCircular();
+		System.out.println("--------------------------");
+		while (!isEmpty()){
+			Dato elem = remove();
+			elem.mostrar();
+			if (nroElem() != 0) {
+			System.out.print(" + ");
+			}
+			aux.add(elem);
+			}
+		System.out.println("");
+		System.out.println("--------------------------");
+			vaciar(aux);
+		}
+		void vaciar(ColaCircular z){
+			while (!z.isEmpty()){
+			add(z.remove());
+			}
+		}

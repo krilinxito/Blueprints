@@ -1,0 +1,57 @@
+private int max = 50;
+	private Dato v[] = new Dato[max+1];
+	private int tope;
+	public Pila() {
+		tope = 0;
+	}
+	public boolean isEmpty() {
+		if (tope==0) {
+			return true;
+		}
+		return false;
+	}
+	public boolean isFull() {
+		if (tope==max) {
+			return true;
+		}
+		return false;
+	}
+	public int nroElem() {
+		return tope;
+	}
+	public void add(Dato x) {
+		if (!isFull()){
+			tope ++;
+			v[tope] = x;
+		}
+		else {
+			System.out.println("pila llena");
+		}
+	}
+	public Dato pop() {
+		Dato elem = new Dato();
+		if (!isEmpty()) {
+			elem = v[tope];
+			tope = tope - 1 ;
+		}
+		else {
+			System.out.println("pila vacia");
+		}
+		return elem;
+	}
+	public void mostrar() {
+		Pila c = new Pila();
+		System.out.println("----------------------");
+			while (!isEmpty()) {
+				Dato elem = pop();
+				elem.mostrar();
+				c.add(elem);
+			}
+			System.out.println("----------------------");
+			vaciar(c);
+	}
+	public void vaciar(Pila a) {
+		while (!a.isEmpty()) {
+			add(a.pop());
+		}
+	}

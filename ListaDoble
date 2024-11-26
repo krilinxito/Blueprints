@@ -1,0 +1,39 @@
+	private 
+	Nodo head;
+public ListaDoble() {
+	this.head = null;
+}
+public Nodo getHead() {
+	return head;
+}
+public void setHead(Nodo head) {
+	this.head = head;
+}
+public  void addLast("Parametros") {
+	Nodo m = new Nodo();
+    
+    // set datos
+
+	if (getHead()==null) {
+		setHead(m);
+	}
+	else {
+	Nodo w = getHead();
+	while(w.getNext()!=null) {
+		w = w.getNext();
+		}
+	w.setNext(m);
+	m.setBefore(w);
+	}
+}
+public void mostrar() {
+	Nodo w = getHead();
+	while(w!=null) {
+			System.out.print( "[" + "gets" + " / " + "gets" + "]");
+			System.out.print("---");
+			if(w.getLink()==null) {
+				System.out.print("null");
+			}
+		w = w.getNext();
+	}
+}

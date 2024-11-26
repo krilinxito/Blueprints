@@ -1,0 +1,46 @@
+private 
+	Nodo head;
+public ListaSimpleCircular() {
+	this.head = null;
+}
+public Nodo getHead() {
+	return head;
+}
+public void setHead(Nodo head) {
+	this.head = head;
+}
+public void addLast("Parametros") {
+    Nodo m = new Nodo();
+    // set datos
+    
+    if (getHead() == null) { 
+        setHead(m);         
+        m.setNext(getHead());
+    } else {
+        Nodo w = getHead();
+        while (w.getNext() != getHead()) {
+            w = w.getNext();
+        }
+        w.setNext(m);      
+        m.setNext(getHead()); 
+    }
+}
+
+
+public void mostrar() {
+    Nodo w = getHead();
+    
+    if (w == null) { 
+        System.out.println("La lista está vacía.");
+        return;
+    }
+    do {
+        System.out.print( "[" + "gets" + " / " + "gets" + "]");
+			System.out.print("---");
+			if(w.getNext()==null) {
+				System.out.print("null");
+			}
+		w = w.getNext()  
+    } while (w != getHead());
+    
+}
